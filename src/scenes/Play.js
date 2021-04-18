@@ -13,6 +13,8 @@ class Play extends Phaser.Scene {
         
 
     create() {
+           
+
         this.sound.play('cute');
         // Starfield bacground
         this.starfield = this.add.tileSprite(0,0,640,480, 'starfield').setOrigin(0,0);
@@ -74,6 +76,22 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width / 2, game.config.height / 2 + 64, 'Press (R) to Restart or <- for menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+
+        //particle creation
+
+        let particleConfig = {
+            x: 400,
+            y: 300,
+            blendmode: 'ADD',
+            speed: {min: 15, max: 20},
+            scale: {start: 1, end:0},
+            rotate: {start: 360, end:0},
+            gravityY: 100,
+            on: false,
+        }
+
+        this.particles = this.add.particles('rocket');
+        this.emitter = this.particles.createEmitter(particleConfig);
     }
 
     update(){
@@ -130,6 +148,7 @@ class Play extends Phaser.Scene {
         ship.alpha = 0;
         // create explosion sprite at ships location
         let boom = this.add.sprite(ship.x, ship.y, 'explosion').setOrigin(0, 0);
+        this.particles.emitParticleAt(ship.x , ship.y, ship.points)
         boom.anims.play('explode');
         boom.on('animationcomplete', () => {
             ship.reset();

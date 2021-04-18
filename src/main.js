@@ -1,7 +1,11 @@
 //Danielle Kraljevski
 //Rocket PAtrol Mods: Bee Blast
-//4/16/2021
+//4/18/2021
 
+//Hours spent on mods :12
+//Create a new scrolling tile sprite for the background (5)
+
+//particle emitter from phaser(20)
 
 //Redesign the game's artwork, UI, and sound to change
 // its theme/aesthetic (to something other than sci-fi) (60)
@@ -10,7 +14,9 @@
 
 //New title screen (10)
 
-//particles
+//Background Music (5)
+
+//110 total
 
 
 let config = {
