@@ -148,7 +148,7 @@ class Play extends Phaser.Scene {
         ship.alpha = 0;
         // create explosion sprite at ships location
         let boom = this.add.sprite(ship.x, ship.y, 'explosion').setOrigin(0, 0);
-        this.particles.emitParticleAt(ship.x , ship.y, ship.points)
+        this.particles.emitParticleAt(ship.x +10, ship.y +10 , ship.points)
         boom.anims.play('explode');
         boom.on('animationcomplete', () => {
             ship.reset();
