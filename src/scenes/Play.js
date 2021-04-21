@@ -78,7 +78,7 @@ class Play extends Phaser.Scene {
         }, null, this);
 
         //particle creation
-
+            //help from jared nolen
         let particleConfig = {
             x: 400,
             y: 300,
